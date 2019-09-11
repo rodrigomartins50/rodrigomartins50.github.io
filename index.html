@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Testando PWA</title>
     <link rel="manifest" href="/manifest.json">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -60,6 +62,13 @@
           deferredPrompt = null;
         });
     });
+
+    if (window.matchMedia('(display-mode: standalone)').matches) {
+  $("#container-web").hide();
+}
+else {
+  $("#container-desktop").hide();
+}
     
     </script>
 
